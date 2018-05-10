@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#2BD98D</color>
+  <color name="colorPrimaryDark">#333333</color>
+  <color name="colorAccent">@color/white</color>
+  <color name="colorSecondary">#AAAAAA</color>
+
+  <color name="white">#FFFFFF</color>
+  <color name="colorTextWindowTitle">#FFFFFF</color>
+
+  <color name="colorFilterElementBorder">@color/colorSecondary</color>
+  <color name="colorFilterElementText">@color/colorSecondary</color>
+
+
+</resources>
