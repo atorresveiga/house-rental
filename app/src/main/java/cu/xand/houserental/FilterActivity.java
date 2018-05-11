@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import cu.xand.houserental.data.FilterElement;
@@ -27,11 +28,11 @@ public class FilterActivity extends AppCompatActivity implements FilterAdapter.F
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_filter);
+    fullScreenWindow();
     createPropertyFilter();
     createRoomsFilter();
     createFeaturesFilter();
     createRulesFilter();
-    //fullScreenWindow();
   }
 
   private void createPropertyFilter() {
@@ -75,9 +76,13 @@ public class FilterActivity extends AppCompatActivity implements FilterAdapter.F
   }
 
   private void fullScreenWindow() {
-    Window w = getWindow(); // in Activity's onCreate() for instance
+   /* Window w = getWindow(); // in Activity's onCreate() for instance
     w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);*/
+
+    getWindow().getDecorView()
+        .setSystemUiVisibility(
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
   }
 
   @Override public void onFilterChange(FilterElement element) {

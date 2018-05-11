@@ -10,8 +10,6 @@
     android:paddingRight="10dp"
     android:minWidth="64dp"
     android:gravity="center"
-    android:textColor="@drawable/filter_attribute_text_selector"
-    android:background="@drawable/filter_attribute_selector"
     android:layout_marginRight="16dp"
     android:layout_gravity="center"
     tools:text="2"

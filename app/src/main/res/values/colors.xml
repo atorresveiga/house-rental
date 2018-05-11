@@ -11,5 +11,7 @@
   <color name="colorFilterElementBorder">@color/colorSecondary</color>
   <color name="colorFilterElementText">@color/colorSecondary</color>
 
+  <color name="background_super_dark">#99000000</color>
+
 
 </resources>
