@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_house_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:paddingBottom="@dimen/main_view_bottom_padding"
+    >
+
+
+  <ImageView
+      android:id="@+id/iv_image"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:scaleType="centerCrop"
+      android:src="@mipmap/placeholder"
+      app:layout_constraintDimensionRatio="H,5:3"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+  <TextView
+      android:id="@+id/tv_price"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="16dp"
+      android:layout_marginRight="16dp"
+      android:background="@drawable/filter_element_active"
+      android:gravity="center"
+      android:minWidth="60dp"
+      android:paddingBottom="4dp"
+      android:paddingLeft="14dp"
+      android:paddingRight="14dp"
+      android:paddingTop="4dp"
+      android:textColor="@color/white"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="@+id/iv_image"
+      app:layout_constraintRight_toRightOf="@id/iv_image"
+      app:layout_constraintTop_toBottomOf="@+id/iv_image"
+      tools:text="500 euros"
+      />
+
+  <TextView
+      android:id="@+id/tv_house_title"
+      android:layout_width="match_parent"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginEnd="16dp"
+      android:layout_marginLeft="16dp"
+      android:layout_marginRight="16dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_price"
+      app:layout_goneMarginLeft="16dp"
+      tools:text="Puerta del Sol"
+      style="@style/TitleTextStyle"
+      />
+
+  <TextView
+      android:id="@+id/tv_rooms"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:background="@drawable/filter_element"
+      android:paddingBottom="4dp"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:paddingTop="4dp"
+      app:layout_constraintLeft_toLeftOf="@id/tv_house_title"
+      app:layout_constraintRight_toLeftOf="@+id/tv_size"
+      app:layout_constraintTop_toBottomOf="@+id/tv_house_title"
+      tools:text="3 bedrooms"
+      />
+
+  <TextView
+      android:id="@+id/tv_size"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="12dp"
+      android:background="@drawable/filter_element"
+      android:paddingBottom="4dp"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:paddingTop="4dp"
+      app:layout_constraintLeft_toRightOf="@id/tv_rooms"
+      app:layout_constraintRight_toLeftOf="@+id/tv_type"
+      app:layout_constraintTop_toBottomOf="@+id/tv_house_title"
+      tools:text="62 m²"
+      />
+
+  <TextView
+      android:id="@+id/tv_type"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="12dp"
+      android:background="@drawable/filter_element"
+      android:paddingBottom="4dp"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:paddingTop="4dp"
+      app:layout_constraintLeft_toRightOf="@id/tv_size"
+      app:layout_constraintTop_toBottomOf="@+id/tv_house_title"
+      tools:text="Student residence"
+      />
+
+</android.support.constraint.ConstraintLayout>

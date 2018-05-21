@@ -6,4 +6,10 @@
   <string name="features_label">Features</string>
   <string name="number_of_rooms_label">Number of rooms</string>
   <string name="rules_label">Rules</string>
+  <string name="activity_main_title">Available Houses</string>
+  <string name="price">%1$s euros</string>
+  <string name="rooms">%1$d bedrooms</string>
+  <string name="size">%1$s m²</string>
+  <string name="sample_description">Amazing designer luxury apartment 5 mins walking distance from the main attractions of Madrid (Mercado de S. Miguel, Plaza Mayor, Puerta del Sol, Thyssen Museum, Caixa Forum, Reina Sofia, Prado Museum and Retiro Park). 5*GL King bed + 2 King single beds and bedsheets + towels.</string>
+  <string name="contact">Contactar</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/window_vertical_margin"
+    android:layout_marginEnd="@dimen/window_horizontal_margin"
+    android:layout_marginLeft="@dimen/window_horizontal_margin"
+    android:layout_marginRight="@dimen/window_horizontal_margin"
+    android:layout_marginStart="@dimen/window_horizontal_margin"
+    app:cardCornerRadius="@dimen/house_card_radius"
+    >
+
+  <include
+      layout="@layout/house_principal_info"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:clickable="true"
+      />
+
+</android.support.v7.widget.CardView>

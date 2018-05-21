@@ -1,11 +1,11 @@
 package cu.xand.houserental.data;
 
-public class FilterElement {
+public class Characteristics {
   int id;
   String name;
   boolean active;
 
-  public FilterElement(int id, String name) {
+  public Characteristics(int id, String name) {
     this.id = id;
     this.name = name;
     this.active = false;

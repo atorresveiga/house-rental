@@ -5,17 +5,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:clipToPadding="false"
     tools:context=".MainActivity"
     >
 
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/top_view_height"
+      android:background="@drawable/ic_header"
+      />
+
   <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      app:layout_constraintBottom_toBottomOf="parent"
+      android:id="@+id/tv_window_title"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      android:text="@string/activity_main_title"
+      style="@style/WindowTitleTextStyle"
       />
+
+  <ImageView
+      android:id="@+id/iv_back"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/ic_arrow_back_black"
+      android:layout_marginLeft="@dimen/window_horizontal_margin"
+      android:layout_marginStart="@dimen/window_horizontal_margin"
+      app:layout_constraintTop_toTopOf="@+id/tv_window_title"
+      app:layout_constraintBottom_toBottomOf="@+id/tv_window_title"
+      app:layout_constraintLeft_toLeftOf="parent"
+      />
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/rv_available_houses"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:clipToPadding="false"
+      android:paddingTop="@dimen/main_view_top_padding"
+      >
+  </android.support.v7.widget.RecyclerView>
+
 
 </android.support.constraint.ConstraintLayout>

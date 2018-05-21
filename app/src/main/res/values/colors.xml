@@ -3,7 +3,7 @@
   <color name="colorPrimary">#2BD98D</color>
   <color name="colorPrimaryDark">#333333</color>
   <color name="colorAccent">@color/white</color>
-  <color name="colorSecondary">#AAAAAA</color>
+  <color name="colorSecondary">#cccccc</color>
 
   <color name="white">#FFFFFF</color>
   <color name="colorTextWindowTitle">#FFFFFF</color>
@@ -12,6 +12,7 @@
   <color name="colorFilterElementText">@color/colorSecondary</color>
 
   <color name="background_super_dark">#99000000</color>
+  <color name="window_background">#f2f2f2</color>
 
 
 </resources>

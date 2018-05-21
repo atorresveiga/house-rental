@@ -1,14 +1,16 @@
 package cu.xand.houserental;
 
-import android.support.v7.app.AppCompatActivity;
+import android.animation.AnimatorSet;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import cu.xand.houserental.data.FilterElement;
+import android.widget.Button;
+import cu.xand.houserental.data.Characteristics;
+import cu.xand.houserental.util.HouseRentalAnimationsUtil;
 import cu.xand.houserental.util.HouseRentalUtils;
 
 public class FilterActivity extends AppCompatActivity implements FilterAdapter.FilterListener {
@@ -25,6 +27,8 @@ public class FilterActivity extends AppCompatActivity implements FilterAdapter.F
   FilterAdapter rulesFilterAdapter;
   RecyclerView rulesRecyclerView;
 
+  Button filter;
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_filter);
@@ -33,6 +37,8 @@ public class FilterActivity extends AppCompatActivity implements FilterAdapter.F
     createRoomsFilter();
     createFeaturesFilter();
     createRulesFilter();
+    setupFilter();
+    calculations();
   }
 
   private void createPropertyFilter() {
@@ -75,17 +81,63 @@ public class FilterActivity extends AppCompatActivity implements FilterAdapter.F
     rulesRecyclerView.setHasFixedSize(true);
   }
 
-  private void fullScreenWindow() {
-   /* Window w = getWindow(); // in Activity's onCreate() for instance
-    w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);*/
+  private void setupFilter() {
+    filter = findViewById(R.id.bt_filter);
+    filter.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View view) {
+        Intent availableHousesIntent = new Intent(FilterActivity.this, MainActivity.class);
+        startActivity(availableHousesIntent);
+      }
+    });
+  }
 
+  @Override protected void onResume() {
+    super.onResume();
+    animateFilter();
+  }
+
+  @Override protected void onStop() {
+    super.onStop();
+    initialState();
+  }
+
+  private void fullScreenWindow() {
     getWindow().getDecorView()
         .setSystemUiVisibility(
             View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
   }
 
-  @Override public void onFilterChange(FilterElement element) {
+  AnimatorSet filterWindowAnimation;
+  float listTranslation;
+  float filterTranslation;
+
+  private void calculations() {
+    listTranslation = HouseRentalAnimationsUtil.filterListsTranslationDistance(this);
+    filterTranslation = HouseRentalAnimationsUtil.filterButtonTranslationDistance(this);
+    filterWindowAnimation =
+        HouseRentalAnimationsUtil.filterAnimation(filter, propertyRecyclerView, roomsRecyclerView,
+            featuresRecyclerView, rulesRecyclerView);
+    initialState();
+  }
+
+  private void initialState() {
+    if (filterWindowAnimation.isRunning()) filterWindowAnimation.cancel();
+    filter.setTranslationY(filterTranslation);
+    featuresRecyclerView.setTranslationY(listTranslation);
+    propertyRecyclerView.setTranslationY(listTranslation);
+    roomsRecyclerView.setTranslationY(listTranslation);
+    rulesRecyclerView.setTranslationY(listTranslation);
+    featuresRecyclerView.setAlpha(0);
+    propertyRecyclerView.setAlpha(0);
+    roomsRecyclerView.setAlpha(0);
+    rulesRecyclerView.setAlpha(0);
+  }
+
+  private void animateFilter() {
+    filterWindowAnimation.start();
+  }
+
+  @Override public void onFilterChange(Characteristics element) {
 
   }
 }

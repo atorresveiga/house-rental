@@ -10,7 +10,7 @@
     android:paddingRight="10dp"
     android:minWidth="64dp"
     android:gravity="center"
-    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
     android:layout_gravity="center"
     tools:text="2"
     android:clickable="true"

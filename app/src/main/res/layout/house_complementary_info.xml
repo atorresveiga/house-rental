@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginStart="16dp"
+    android:paddingBottom="@dimen/main_view_bottom_padding"
+    >
+
+  <TextView
+      android:id="@+id/tv_description"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      tools:text="@string/sample_description"
+      />
+
+  <View
+      android:id="@+id/divider1"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="16dp"
+      android:background="@color/colorSecondary"
+      app:layout_constraintTop_toBottomOf="@+id/tv_description"
+      />
+
+  <TextView
+      android:id="@+id/tv_features_label"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="@string/features_label"
+      android:textAllCaps="true"
+      app:layout_constraintTop_toBottomOf="@+id/divider1"
+      />
+
+  <TextView
+      android:id="@+id/tv_features"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      app:layout_constraintTop_toBottomOf="@+id/tv_features_label"
+      ></TextView>
+
+  <View
+      android:id="@+id/divider2"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="16dp"
+      android:background="@color/colorSecondary"
+      app:layout_constraintTop_toBottomOf="@+id/tv_features"
+      />
+
+  <TextView
+      android:id="@+id/tv_rules_label"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="@string/rules_label"
+      android:textAllCaps="true"
+      app:layout_constraintTop_toBottomOf="@+id/divider2"
+      />
+
+  <TextView
+      android:id="@+id/tv_rules"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      app:layout_constraintTop_toBottomOf="@+id/tv_rules_label"
+      />
+
+</android.support.constraint.ConstraintLayout>
